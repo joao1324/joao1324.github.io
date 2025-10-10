@@ -1,2 +1,4 @@
+---
 layout: portfolio
 title: "Home"
+---
