@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #1a0b2e; /* dark purple */
+      color: #eee;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .left {
+      width: 30%;
+      background-color: #2a1448;
+      padding: 2rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left img {
+      width: 140px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid #7a4ff2;
+    }
+
+    .cv-icon {
+      margin: 0.5rem 0 2rem;
+      text-decoration: none;
+      color: #b891ff;
+      background: #3a1f64;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .cv-icon:hover {
+      background: #5b2fb5;
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      color: #c9a7ff;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 0.3rem 0;
+    }
+
+    .right {
+      width: 70%;
+      padding: 3rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bio {
+      margin-bottom: 2rem;
+    }
+
+    .projects {
+      flex-grow: 1;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+
+    footer a {
+      color: #c9a7ff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="left">
+    <img src="{{ '/assets/me.jpg' | relative_url }}" alt="Profile photo">
+    <a href="{{ '/assets/CV.pdf' | relative_url }}" class="cv-icon" target="_blank">📄 CV</a>
+
+    <h3>Skills</h3>
+    <ul>
+      <li>Robotics & Automation</li>
+      <li>ROS / MoveIt</li>
+      <li>Computer Vision</li>
+      <li>Python / C++ / MATLAB</li>
+    </ul>
+
+    <h3>Interests</h3>
+    <ul>
+      <li>AI in Robotics</li>
+      <li>3D Printing</li>
+      <li>Embedded Systems</li>
+    </ul>
+  </div>
+
+  <div class="right">
+    <div class="bio">
+      <h1>{{ site.title }}</h1>
+      <p>I'm a robotics engineer passionate about combining perception and control. 
+         My work focuses on real-world robot autonomy, integrating sensors, actuators, 
+         and AI-based decision-making.</p>
+    </div>
+
+    <div class="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Green Object Tracker:</strong> Using a RealSense camera and ROS to follow moving targets.</li>
+        <li><strong>Panda Manipulator Control:</strong> Real-time motion planning with MoveIt and RViz.</li>
+        <li><strong>Vision-Based Servoing:</strong> Closed-loop control based on visual feedback.</li>
+      </ul>
+    </div>
+
+    <footer>
+      <a href="https://www.linkedin.com/in/joao1324" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+      <a href="https://github.com/joao1324" target="_blank"><i class="ri-github-fill"></i></a>
+    </footer>
+  </div>
+</body>
+</html>
