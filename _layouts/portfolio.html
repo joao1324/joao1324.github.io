@@ -14,6 +14,7 @@
       min-height: 100vh;
     }
 
+    /* ---------- LEFT SIDE ---------- */
     .left {
       width: 30%;
       background-color: #2a1448;
@@ -47,7 +48,6 @@
 
     h3 {
       text-align: center;
-      text-justify: left;
       margin-top: 1.5rem;
       color: #c9a7ff;
       text-transform: uppercase;
@@ -62,8 +62,10 @@
 
     ul li {
       margin: 0.3rem 0;
+      text-align: center;
     }
 
+    /* ---------- RIGHT SIDE ---------- */
     .right {
       width: 70%;
       padding: 3rem;
@@ -77,10 +79,39 @@
       margin-bottom: 2rem;
     }
 
-    .projects {
-      flex-grow: 1;
+    /* ---------- PROJECT GRID ---------- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
     }
 
+    .project-card {
+      background-color: #2a1448;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(122, 79, 242, 0.3);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      color: #c9a7ff;
+      margin: 0.8rem 0;
+      font-size: 1rem;
+    }
+
+    /* ---------- FOOTER ---------- */
     footer {
       display: flex;
       justify-content: center;
@@ -99,13 +130,16 @@
       color: #fff;
     }
   </style>
+
+  <!-- Remix Icon (for LinkedIn + GitHub icons) -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
+  <!-- LEFT PANEL -->
   <div class="left">
     <h1>{{ site.title }}</h1>
-    <img src="assets/ldphoto.jpeg"Profile photo">
+    <img src="assets/ldphoto.jpeg" alt="Profile photo">
     <a href="assets/cv_joao.pdf" class="cv-icon" target="_blank">📄 CV</a>
 
     <h3>Skills</h3>
@@ -122,28 +156,58 @@
       <li>AI in Robotics</li>
       <li>Medical Robotics</li>
       <li>Sustainable Robotics</li>
-
-
     </ul>
   </div>
 
+  <!-- RIGHT PANEL -->
   <div class="right">
     <div class="bio">
       <h2>Bio</h2>
-      <p>I am a robotics engineer passionate about combining perception and control. 
-         My projects focus on real-world robot autonomy, integrating sensors, actuators, 
-         and AI reasoning.</p>
+      <p>
+        I am a robotics engineer passionate about combining perception and control. 
+        My projects focus on real-world robot autonomy, integrating sensors, actuators, 
+        and AI reasoning.
+      </p>
     </div>
 
     <div class="projects">
       <h2>Projects</h2>
-      <ul>
-        <li><strong>Robinjection</strong> Add photo report.</li>
-        <li><strong>MEng Final Project</strong> Add video and report</li>
-        <li><strong>Evolutionary Algorithms</strong> Add video (HW Teams) and report</li>
-        <li><strong>Rob mech systems-moving eyes</strong> Add video (HW Teams) and report</li>
-        <li><strong>Crab trap</strong> Add video and report</li>
-      </ul>
+      <div class="project-grid">
+        <div class="project-card">
+          <a href="assets/reports/robinjection.pdf" target="_blank">
+            <img src="assets/images/robinjection.gif" alt="Robinjection project">
+            <h3>Robinjection</h3>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="assets/reports/meng_project.pdf" target="_blank">
+            <img src="assets/images/meng_project.png" alt="MEng Final Project">
+            <h3>MEng Final Project</h3>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="assets/reports/evolutionary_algorithms.pdf" target="_blank">
+            <img src="assets/images/evolutionary_algorithms.gif" alt="Evolutionary Algorithms">
+            <h3>Evolutionary Algorithms</h3>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="assets/reports/robotic_mech_systems.pdf" target="_blank">
+            <img src="assets/images/robotic_mech_systems.png" alt="Rob Mech Systems">
+            <h3>Rob Mech Systems — Moving Eyes</h3>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="assets/reports/crab_trap.pdf" target="_blank">
+            <img src="assets/images/crab_trap.jpg" alt="Crab Trap project">
+            <h3>Crab Trap</h3>
+          </a>
+        </div>
+      </div>
     </div>
 
     <footer>
