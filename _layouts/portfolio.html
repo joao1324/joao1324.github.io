@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> {{ site.title }}</title>
+  <title>{{ site.title }}</title>
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #1a0b2e; 
+      background-color: #1a0b2e;
       color: #eee;
       display: flex;
       min-height: 100vh;
     }
 
-    
     .left {
       width: 30%;
       background-color: #2a1448;
@@ -23,6 +22,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .left h1 {
+      font-size: 1.4rem;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 0.5rem;
     }
 
     .left img {
@@ -63,9 +73,9 @@
     ul li {
       margin: 0.3rem 0;
       text-align: center;
+      font-size: 0.9rem;
     }
 
-   
     .right {
       width: 70%;
       padding: 3rem;
@@ -75,11 +85,39 @@
       justify-content: space-between;
     }
 
+    /* Bio & Objectives */
     .bio {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
-   
+    .bio p {
+      line-height: 1.7;
+      color: #ddd;
+      font-size: 0.95rem;
+    }
+
+    .objectives {
+      background-color: #2a1448;
+      border-left: 3px solid #7a4ff2;
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .objectives h2 {
+      color: #c9a7ff;
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    .objectives p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    /* Project Grid */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -90,13 +128,20 @@
       background-color: #2a1448;
       border-radius: 12px;
       overflow: hidden;
-      text-align: center;
+      text-align: left;
       transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 12px rgba(122, 79, 242, 0.3);
+    }
+
+    .project-card a.card-link {
+      text-decoration: none;
+      color: inherit;
     }
 
     .project-card img {
@@ -107,24 +152,56 @@
 
     .project-card h3 {
       color: #c9a7ff;
-      margin: 0.8rem 0;
-      font-size: 1rem;
+      margin: 0.8rem 0.8rem 0.4rem;
+      font-size: 0.95rem;
+      text-align: left;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .project-card .card-body {
+      padding: 0 0.8rem 1rem;
+      flex: 1;
+    }
+
+    .project-card .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #7a4ff2;
+      margin-top: 0.6rem;
+      margin-bottom: 0.2rem;
     }
 
     .project-card p {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: #ccc;
-      padding: 0 0.8rem 1rem;
-      margin: 0;
+      margin: 0 0 0.4rem;
       line-height: 1.4;
     }
 
-    
+    .report-link {
+      display: inline-block;
+      margin: 0.6rem 0 0;
+      font-size: 0.75rem;
+      color: #b891ff;
+      text-decoration: none;
+      border: 1px solid #5b2fb5;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .report-link:hover {
+      background: #3a1f64;
+    }
+
     footer {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      padding: 1rem;
+      padding: 1.5rem 1rem 1rem;
     }
 
     footer a {
@@ -139,7 +216,6 @@
     }
   </style>
 
-
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
@@ -152,7 +228,7 @@
 
     <h3>Skills</h3>
     <ul>
-      <li>Robotics & Automation</li>
+      <li>Robotics &amp; Automation</li>
       <li>Artificial Intelligence (RL, ML, EA)</li>
       <li>Machine Vision</li>
       <li>Python / C++ / C / MATLAB / Java / ROS</li>
@@ -167,88 +243,133 @@
     </ul>
   </div>
 
-  
   <div class="right">
+
+    <!-- BIO -->
     <div class="bio">
       <h2>Bio</h2>
       <p>
-        I am a robotics engineer passionate about combining perception and control. 
-        My projects focus on real-world robot autonomy, sensors integration, actuators 
-        and AI.
+        I am a robotics engineer with an MEng from Heriot-Watt University (Edinburgh Campus), where I specialised
+        in autonomous systems, perception, and embedded control. During my degree I contributed to an
+        <strong>autonomous pleural thoracentesis</strong> project - a medical robotics system published at
+        <strong>ICARM 2025</strong> - and completed a final-year dissertation on imitation learning
+        for real-time robotic tracking. My project experience spans medical robotics, sustainable
+        underwater systems, and intelligent navigation, giving me a broad foundation in both hardware
+        and software integration.
       </p>
     </div>
 
+    <!-- OBJECTIVES -->
+    <div class="objectives">
+      <h2>Objectives &amp; Research Interests</h2>
+      <p>
+       <p>
+         Passionate about building systems that can perceive and act reliably in the real world, my interests span <strong>medical robotics</strong>, <strong>human-robot interaction</strong>, and <strong>AI-driven perception and control</strong>. I am currently enrolled in the <strong>RAINZ CDT</strong> and am actively looking for research collaborations and engineering projects where I can apply and grow these skills.
+      </p>
+      </p>
+    </div>
+
+    <!-- PROJECTS -->
     <div class="projects">
       <h2>Projects</h2>
       <div class="project-grid">
+
         <div class="project-card">
-          <a href="assets/reports/RobInjection_ICRA2024.pdf" target="_blank">
+          <a class="card-link" href="assets/reports/RobInjection_ICRA2024.pdf" target="_blank">
             <img src="assets/images/Screenshot from 2025-10-12 18-54-03.png" alt="Robinjection project">
             <h3>Robotic Aspirator for Autonomous Thoracentesis</h3>
           </a>
-           <p>
-            A robotic system for autonomous ultrasound-guided thoracentesis in pleural effusion treatment. It detects the pleural zone in real time and controls needle insertion automatically. The system improves safety, accuracy, and consistency while reducing the need for direct clinician intervention.
-          </p>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Automate ultrasound-guided thoracentesis to improve safety and reduce dependence on direct clinician control during needle insertion.</p>
+            <div class="label">My Contribution</div>
+            <p>Developed real-time pleural zone detection and implemented the closed-loop needle insertion controller; co-authored the ICARM 2025 paper.</p>
+            <a class="report-link" href="assets/reports/RobInjection_ICRA2024.pdf" target="_blank">📄 Report</a>
+          </div>
         </div>
 
         <div class="project-card">
-          <a href="assets/reports/MEng_Final_Report.pdf" target="_blank">
+          <a class="card-link" href="assets/reports/MEng_Final_Report.pdf" target="_blank">
             <img src="assets/images/panda.gif" alt="MEng Final Project">
             <h3>Imitation Learning for Robotic Tracking</h3>
           </a>
-          <p>
-            A robotic imitation learning system enabling a Franka Emika Panda arm to mimic human wrist movements in real time using RGB-D vision. It demonstrates responsive and smooth human-robot motion tracking, combining perception and motion planning through ROS, Gazebo, and MoveIt.
-          </p>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Enable a Franka Emika Panda arm to mimic human wrist movements in real time using RGB-D vision, without explicit programming of each motion.</p>
+            <div class="label">My Contribution</div>
+            <p>Designed and trained the imitation learning pipeline, integrated it with ROS/MoveIt, and evaluated tracking accuracy against ground-truth wrist trajectories.</p>
+            <a class="report-link" href="assets/reports/MEng_Final_Report.pdf" target="_blank">📄 Report</a>
+          </div>
         </div>
 
         <div class="project-card">
-          <a href="assets/reports/fishgear_report.pdf" target="_blank">
+          <a class="card-link" href="assets/reports/fishgear_report.pdf" target="_blank">
             <img src="assets/images/fishinggeardemo-ezgif.com-video-to-gif-converter.gif" alt="Crab Trap project">
             <h3>Ropeless Fishing Gear Demonstrator</h3>
           </a>
-          <p>
-            This ropeless fishing system uses acoustic signaling to trigger buoy release and trap retrieval. It demonstrates a sustainable alternative to traditional rope-based fishing through embedded control, communication, and underwater robotics integration.
-          </p>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Demonstrate a sustainable alternative to traditional rope-based fishing that eliminates entanglement risk for marine mammals.</p>
+            <div class="label">My Contribution</div>
+            <p>Built the embedded acoustic communication system and designed the buoy release mechanism; validated end-to-end operation in water-tank trials.</p>
+            <a class="report-link" href="assets/reports/fishgear_report.pdf" target="_blank">📄 Report</a>
+          </div>
         </div>
 
         <div class="project-card">
-          <a href="assets/reports/Intelligent_Robotics_Report.pdf" target="_blank">
+          <a class="card-link" href="assets/reports/Intelligent_Robotics_Report.pdf" target="_blank">
             <img src="assets/images/IMG_8089-ezgif.com-video-to-gif-converter.gif" alt="Evolutionary Algorithms">
             <h3>Mars Rover Navigation with Evolutionary Algorithms</h3>
           </a>
-          <p>
-            Mars rover navigation system. It used Behaviour-Based and Evolutionary Robotics. The BBR robot followed lines and avoided obstacles using sensors. The ER robot learned through neural networks and fitness rewards.
-          </p>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Develop and compare behaviour-based and evolutionary approaches to autonomous rover navigation in an unstructured environment.</p>
+            <div class="label">My Contribution</div>
+            <p>Implemented and tuned both the BBR sensor pipeline and the neural-network controller trained via evolutionary fitness rewards; ran comparative performance evaluations.</p>
+            <a class="report-link" href="assets/reports/Intelligent_Robotics_Report.pdf" target="_blank">📄 Report</a>
+          </div>
         </div>
 
         <div class="project-card">
-          <a href="assets/reports/rob_eyes.pdf" target="_blank">
+          <a class="card-link" href="assets/reports/rob_eyes.pdf" target="_blank">
             <img src="assets/images/Screenshot from 2025-10-12 19-00-04.png" alt="Rob Mech Systems">
             <h3>Human-eye Rotation System</h3>
           </a>
-          <p>
-            A two-axis camera mount inspired by human eye movement. It uses servo motors, image processing, and object tracking to mimic gaze behavior. The system enables real-time visual tracking with mechanical precision and efficient data transmission.
-          </p>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Build a two-axis camera mount that replicates human gaze behaviour for real-time visual object tracking.</p>
+            <div class="label">My Contribution</div>
+            <p>Designed the mechanical mount, wrote the image-processing tracking algorithm, and integrated servo control with efficient data transmission.</p>
+            <a class="report-link" href="assets/reports/rob_eyes.pdf" target="_blank">📄 Report</a>
+          </div>
         </div>
 
         <div class="project-card">
-          <a href="assets/reports/med_delivery_report.pdf" target="_blank">
+          <a class="card-link" href="assets/reports/med_delivery_report.pdf" target="_blank">
             <img src="assets/images/Untitled-2.jpg" alt="Medical Delivery">
             <h3>Medical Care Delivery Robot</h3>
           </a>
-          <p>
-            Self-driving robot for hospitals to deliver medical supplies securely and autonomously. It uses ultrasonic and colour sensors, dual Arduino control, and PWM motor regulation. The robot follows floor lines, detects obstacles, and locks/unlocks its cabinet via pin code.
-          </p>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Create a self-driving hospital robot that autonomously delivers medical supplies to reduce staff workload and risk of cross-contamination.</p>
+            <div class="label">My Contribution</div>
+            <p>Programmed the dual-Arduino control architecture, implemented line-following and obstacle detection logic, and developed the pin-code cabinet locking system.</p>
+            <a class="report-link" href="assets/reports/med_delivery_report.pdf" target="_blank">📄 Report</a>
+          </div>
         </div>
 
         <div class="project-card">
-          <a href="assets/reports/pso_report.pdf" target="_blank">
+          <a class="card-link" href="assets/reports/pso_report.pdf" target="_blank">
             <img src="assets/images/ParticleSwarmArrowsAnimation.gif" alt="PSO">
             <h3>ANN with Particle Swarm Optimisation</h3>
           </a>
-          <p>
-            Artificial Neural Networks (ANNs) combined with Particle Swarm Optimization (PSO) to solve a binary classification task. It explored how ANN architecture and PSO hyperparameters affect accuracy. 
-          </p>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Investigate how PSO can replace gradient-based training for ANNs on a binary classification task, and assess the effect of architecture and hyperparameter choices.</p>
+            <div class="label">My Contribution</div>
+            <p>Implemented the PSO-ANN framework from scratch, designed the experimental grid search, and analysed how swarm size and network depth affect classification accuracy.</p>
+            <a class="report-link" href="assets/reports/pso_report.pdf" target="_blank">📄 Report</a>
+          </div>
         </div>
 
       </div>
@@ -259,5 +380,6 @@
       <a href="https://github.com/joao1324" target="_blank"><i class="ri-github-fill"></i></a>
     </footer>
   </div>
+
 </body>
 </html>
