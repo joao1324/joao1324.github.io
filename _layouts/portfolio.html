@@ -85,7 +85,6 @@
       justify-content: space-between;
     }
 
-    /* Bio & Objectives */
     .bio {
       margin-bottom: 1.5rem;
     }
@@ -117,7 +116,6 @@
       line-height: 1.6;
     }
 
-    /* Project Grid */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -183,7 +181,7 @@
 
     .report-link {
       display: inline-block;
-      margin: 0.6rem 0 0;
+      margin: 0.6rem 0.3rem 0 0;
       font-size: 0.75rem;
       color: #b891ff;
       text-decoration: none;
@@ -195,6 +193,27 @@
 
     .report-link:hover {
       background: #3a1f64;
+    }
+
+    .institution-tag {
+      display: inline-block;
+      margin: 0.6rem 0 0;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    .institution-tag.uom {
+      background: #1a3a5c;
+      color: #7ec8e3;
+    }
+
+    .institution-tag.hwu {
+      background: #1a3a2a;
+      color: #7ec8a0;
     }
 
     footer {
@@ -246,7 +265,6 @@
 
   <div class="right">
 
-    <!-- BIO -->
     <div class="bio">
       <h2>Bio</h2>
       <p>
@@ -260,22 +278,19 @@
       </p>
     </div>
 
-    <!-- OBJECTIVES -->
     <div class="objectives">
       <h2>Objectives &amp; Research Interests</h2>
       <p>
-       <p>
-         Passionate about building systems that can perceive and act reliably in the real world, my interests span <strong>medical robotics</strong>, <strong>human-robot interaction</strong>, 
-         and <strong>AI-driven perception and control</strong>.  I am actively looking for research collaborations and engineering projects where I can apply and grow these skills.
-      </p>
+        Passionate about building systems that can perceive and act reliably in the real world, my interests span <strong>medical robotics</strong>, <strong>human-robot interaction</strong>,
+        and <strong>AI-driven perception and control</strong>. I am actively looking for research collaborations and engineering projects where I can apply and grow these skills.
       </p>
     </div>
 
-    <!-- PROJECTS -->
     <div class="projects">
       <h2>Projects</h2>
       <div class="project-grid">
 
+        <!-- 1. Robotic Aspirator -->
         <div class="project-card">
           <a class="card-link" href="assets/reports/RobInjection_ICRA2024.pdf" target="_blank">
             <img src="assets/images/Screenshot from 2025-10-12 18-54-03.png" alt="Robinjection project">
@@ -287,9 +302,11 @@
             <div class="label">My Contribution</div>
             <p>Developed real-time pleural zone detection and implemented the closed-loop needle insertion controller; co-authored the ICARM 2025 paper.</p>
             <a class="report-link" href="assets/reports/RobInjection_ICRA2024.pdf" target="_blank">📄 Report</a>
+            <span class="institution-tag hwu">🎓 Heriot-Watt University</span>
           </div>
         </div>
 
+        <!-- 2. Imitation Learning -->
         <div class="project-card">
           <a class="card-link" href="assets/reports/MEng_Final_Report.pdf" target="_blank">
             <img src="assets/images/panda.gif" alt="MEng Final Project">
@@ -301,9 +318,27 @@
             <div class="label">My Contribution</div>
             <p>Designed and trained the imitation learning pipeline, integrated it with ROS/MoveIt, and evaluated tracking accuracy against ground-truth wrist trajectories.</p>
             <a class="report-link" href="assets/reports/MEng_Final_Report.pdf" target="_blank">📄 Report</a>
+            <span class="institution-tag hwu">🎓 Heriot-Watt University</span>
           </div>
         </div>
 
+        <!-- 3. Leo Rover -->
+        <div class="project-card">
+          <a class="card-link" href="https://youtu.be/eat0fIyeqMQ" target="_blank">
+            <img src="assets/images/leo_side.png" alt="Leo Rover Cube Sorting">
+            <h3>Leo Rover: Autonomous Navigation, Manipulation and Sorting</h3>
+          </a>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Autonomously navigate an indoor arena, locate three colour-coded cubes using RGB-D vision, pick them up with a robotic arm, and deposit each into its matching coloured box.</p>
+            <div class="label">My Contribution</div>
+            <p>Led the mechanical design of the cube pick-and-place system, performed hand-eye calibration between the Intel RealSense D435 and the MyCobot 280 Pi frame, and implemented the manipulation pipeline using MoveIt 2, including grasp planning, arm trajectory execution, and coordinated drop-off into the correct coloured box.</p>
+            <a class="report-link" href="https://youtu.be/eat0fIyeqMQ" target="_blank">🎥 Video</a>
+            <span class="institution-tag uom">🎓 Univ. of Manchester</span>
+          </div>
+        </div>
+
+        <!-- 4. Ropeless Fishing -->
         <div class="project-card">
           <a class="card-link" href="assets/reports/fishgear_report.pdf" target="_blank">
             <img src="assets/images/fishinggeardemo-ezgif.com-video-to-gif-converter.gif" alt="Crab Trap project">
@@ -315,37 +350,77 @@
             <div class="label">My Contribution</div>
             <p>Built the embedded acoustic communication system and designed the buoy release mechanism; validated end-to-end operation in water-tank trials.</p>
             <a class="report-link" href="assets/reports/fishgear_report.pdf" target="_blank">📄 Report</a>
+            <span class="institution-tag hwu">🎓 Heriot-Watt University</span>
           </div>
         </div>
 
+        <!-- 5. UAV Feedback Control -->
         <div class="project-card">
-          <a class="card-link" href="assets/reports/Intelligent_Robotics_Report.pdf" target="_blank">
-            <img src="assets/images/IMG_8089-ezgif.com-video-to-gif-converter.gif" alt="Evolutionary Algorithms">
-            <h3>Mars Rover Navigation with Evolutionary Algorithms</h3>
+          <a class="card-link" href="https://www.youtube.com/watch?v=7aE5D_JZ1MI" target="_blank">
+            <img src="assets/drone80.gif" alt="LQR DOBC UAV Controller">
+            <h3>Drone Feedback Control: LQR + DOBC with PSO Auto-Tuning</h3>
           </a>
           <div class="card-body">
             <div class="label">Goal</div>
-            <p>Develop and compare behaviour-based and evolutionary approaches to autonomous rover navigation in an unstructured environment.</p>
+            <p>Design and tune a feedback controller for 3D UAV position stabilisation under wind disturbance, validated in simulation and on a real DJI Tello quadcopter.</p>
             <div class="label">My Contribution</div>
-            <p>Implemented and tuned both the BBR sensor pipeline and the neural-network controller trained via evolutionary fitness rewards; ran comparative performance evaluations.</p>
-            <a class="report-link" href="assets/reports/Intelligent_Robotics_Report.pdf" target="_blank">📄 Report</a>
+            <p>Implemented the Disturbance Observer-Based Controller (DOBC) for wind compensation on top of an LQR state-feedback controller, and applied a PSO auto-tuner to optimise gains; diagnosed and resolved a limit cycle instability observed during real hardware flights.</p>
+            <a class="report-link" href="https://www.youtube.com/watch?v=7aE5D_JZ1MI" target="_blank">🎥 Video</a>
+            <span class="institution-tag uom">🎓 Univ. of Manchester</span>
           </div>
         </div>
 
+        <!-- 6. A* Path Planning -->
         <div class="project-card">
-          <a class="card-link" href="assets/reports/rob_eyes.pdf" target="_blank">
-            <img src="assets/images/Screenshot from 2025-10-12 19-00-04.png" alt="Rob Mech Systems">
-            <h3>Human-eye Rotation System</h3>
+          <a class="card-link" href="https://github.com/joao1324/AMR_Path_Planning" target="_blank">
+            <img src="assets/astar.gif" alt="A* Path Planning GUI">
+            <h3>A* Path Planning</h3>
           </a>
           <div class="card-body">
             <div class="label">Goal</div>
-            <p>Build a two-axis camera mount that replicates human gaze behaviour for real-time visual object tracking.</p>
+            <p>Implement an efficient A* pathfinding algorithm for autonomous mobile robot navigation on occupancy grids, finding optimal collision-free routes between user-defined start and goal positions.</p>
             <div class="label">My Contribution</div>
-            <p>Designed the mechanical mount, wrote the image-processing tracking algorithm, and integrated servo control with efficient data transmission.</p>
-            <a class="report-link" href="assets/reports/rob_eyes.pdf" target="_blank">📄 Report</a>
+            <p>Developed a complete A* implementation with Euclidean distance heuristic and 4-directional movement within the provided GUI framework, optimised for execution speed and verified across multiple obstacle configurations.</p>
+            <a class="report-link" href="https://github.com/joao1324/AMR_Path_Planning" target="_blank">💻 Code</a>
+            <a class="report-link" href="assets/astar.gif" target="_blank">🎥 Demo</a>
+            <span class="institution-tag uom">🎓 Univ. of Manchester</span>
           </div>
         </div>
 
+        <!-- 7. Object Recognition -->
+        <div class="project-card">
+          <a class="card-link" href="assets/reports/Coursework_1___Cognitive_Robotics_and_Computer_Vision.pdf" target="_blank">
+            <img src="assets/images/image-with-keypoints.jpg" alt="Computer Vision Object Recognition">
+            <h3>Object Recognition: Deep Learning vs Classical Features</h3>
+          </a>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Benchmark SIFT + Bag of Visual Words against ResNet34 and a custom CNN for object recognition across a controlled RGB-D dataset and the cluttered COCO dataset.</p>
+            <div class="label">My Contribution</div>
+            <p>Built and evaluated all three pipelines, ran systematic hyperparameter searches across both datasets, and analysed failure modes — finding transfer learning (ResNet34) decisive for real-world scenes at 82.8% accuracy vs 42.7% for classical SIFT.</p>
+            <a class="report-link" href="assets/reports/Coursework_1___Cognitive_Robotics_and_Computer_Vision.pdf" target="_blank">📄 Report</a>
+            <span class="institution-tag uom">🎓 Univ. of Manchester</span>
+          </div>
+        </div>
+
+        <!-- 8. ROS2 Drone Control -->
+        <div class="project-card">
+          <a class="card-link" href="https://github.com/joao1324/Software_for_Robotics_CW2" target="_blank">
+            <img src="assets/sfr.gif" alt="ROS2 Drone and Nav2 Navigation">
+            <h3>ROS2 Drone Control &amp; Autonomous Navigation</h3>
+          </a>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Build a full ROS2 software stack enabling 3D drone position control in Gazebo via velocity commands, and autonomous waypoint navigation using Nav2 with a TurtleBot4.</p>
+            <div class="label">My Contribution</div>
+            <p>Implemented the Gazebo–ROS2 bridge launch file, an Action Server controller node with closed-loop 3D positioning, and a Nav2 navigation node for autonomous goal-reaching within 60 seconds.</p>
+            <a class="report-link" href="https://github.com/joao1324/Software_for_Robotics_CW2" target="_blank">💻 Code</a>
+            <a class="report-link" href="assets/sfr.gif" target="_blank">🎥 Demo</a>
+            <span class="institution-tag uom">🎓 Univ. of Manchester</span>
+          </div>
+        </div>
+
+        <!-- 9. Medical Care Delivery -->
         <div class="project-card">
           <a class="card-link" href="assets/reports/med_delivery_report.pdf" target="_blank">
             <img src="assets/images/Untitled-2.jpg" alt="Medical Delivery">
@@ -357,9 +432,43 @@
             <div class="label">My Contribution</div>
             <p>Programmed the dual-Arduino control architecture, implemented line-following and obstacle detection logic, and developed the pin-code cabinet locking system.</p>
             <a class="report-link" href="assets/reports/med_delivery_report.pdf" target="_blank">📄 Report</a>
+            <span class="institution-tag hwu">🎓 Heriot-Watt University</span>
           </div>
         </div>
 
+        <!-- 10. Mars Rover -->
+        <div class="project-card">
+          <a class="card-link" href="assets/reports/Intelligent_Robotics_Report.pdf" target="_blank">
+            <img src="assets/images/IMG_8089-ezgif.com-video-to-gif-converter.gif" alt="Evolutionary Algorithms">
+            <h3>Mars Rover Navigation with Evolutionary Algorithms</h3>
+          </a>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Develop and compare behaviour-based and evolutionary approaches to autonomous rover navigation in an unstructured environment.</p>
+            <div class="label">My Contribution</div>
+            <p>Implemented and tuned both the BBR sensor pipeline and the neural-network controller trained via evolutionary fitness rewards; ran comparative performance evaluations.</p>
+            <a class="report-link" href="assets/reports/Intelligent_Robotics_Report.pdf" target="_blank">📄 Report</a>
+            <span class="institution-tag hwu">🎓 Heriot-Watt University</span>
+          </div>
+        </div>
+
+        <!-- 11. Human Eye -->
+        <div class="project-card">
+          <a class="card-link" href="assets/reports/rob_eyes.pdf" target="_blank">
+            <img src="assets/images/Screenshot from 2025-10-12 19-00-04.png" alt="Rob Mech Systems">
+            <h3>Human-eye Rotation System</h3>
+          </a>
+          <div class="card-body">
+            <div class="label">Goal</div>
+            <p>Build a two-axis camera mount that replicates human gaze behaviour for real-time visual object tracking.</p>
+            <div class="label">My Contribution</div>
+            <p>Designed the mechanical mount, wrote the image-processing tracking algorithm, and integrated servo control with efficient data transmission.</p>
+            <a class="report-link" href="assets/reports/rob_eyes.pdf" target="_blank">📄 Report</a>
+            <span class="institution-tag hwu">🎓 Heriot-Watt University</span>
+          </div>
+        </div>
+
+        <!-- 12. ANN + PSO -->
         <div class="project-card">
           <a class="card-link" href="assets/reports/pso_report.pdf" target="_blank">
             <img src="assets/images/ParticleSwarmArrowsAnimation.gif" alt="PSO">
@@ -371,6 +480,7 @@
             <div class="label">My Contribution</div>
             <p>Implemented the PSO-ANN framework from scratch, designed the experimental grid search, and analysed how swarm size and network depth affect classification accuracy.</p>
             <a class="report-link" href="assets/reports/pso_report.pdf" target="_blank">📄 Report</a>
+            <span class="institution-tag hwu">🎓 Heriot-Watt University</span>
           </div>
         </div>
 
@@ -378,7 +488,7 @@
     </div>
 
     <div class="documents" style="margin-top: 3rem;">
-      <h2>Continuous Professional Development </h2>
+      <h2>Continuous Professional Development</h2>
       <div style="display: flex; gap: 1rem;">
         <a href="assets/CPD_Reflection.pdf" class="cv-icon" target="_blank">📊 CPD Reflection</a>
         <a href="assets/CPD_Plan.pdf" class="cv-icon" target="_blank">📄 CPD Plan</a>
